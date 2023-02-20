@@ -53,12 +53,12 @@ min_ret = ret
 
 # Randomly change value in each row sometimes, to get better results
 counter = 0
-while(counter < 5000):
+while(min_ret != 0):
     for i in range(row):
         rand = random.randint(0, 3)
         min = textArray[i][rand]
 
-        rand2 = random.randint(0, 3)
+        rand2 = random.randint(0, 4)
         if(rand2 != 0):
             for j in textArray[i]:
                 if(abs(j + ret) < abs(min + ret)):
@@ -71,6 +71,7 @@ while(counter < 5000):
     if(abs(ret) <= abs(min_ret)):
         min_ret = ret
         counter = 0
+        print("ret: ", min_ret)
 
     ret = 0
 
