@@ -3,11 +3,14 @@
 import random
 
 # Read and input file
-with open('cvicenie1data.txt') as f:
+with open('./CV1/cvicenie1data.txt') as f:
     text = f.readlines()[2:]
 
-with open('cvicenie1data.txt') as f:
+with open('./CV1/cvicenie1data.txt') as f:
     row = int(f.readlines()[0])
+
+with open('./CV1/cvicenie1data.txt') as f:
+    column = int(f.readlines()[1])
 
 # The number that must be as close to 0 as possible
 ret = 0
@@ -55,7 +58,7 @@ min_ret = ret
 counter = 0
 while(min_ret != 0):
     for i in range(row):
-        rand = random.randint(0, 3)
+        rand = random.randint(0, column - 1)
         min = textArray[i][rand]
 
         rand2 = random.randint(0, 4)
